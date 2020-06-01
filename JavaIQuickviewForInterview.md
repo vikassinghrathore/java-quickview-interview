@@ -20,7 +20,9 @@ Collection of objects is called class. It is a logical entity.
 
 
 ### Encapsulation: (singalton dp)
-It is the process of Encapsulating data and corresponding methods into a single module. Encapsulation is a process of wrapping of data and methods in a single unit is called encapsulation. Encapsulation is achieved in java language by class concept.
+- It is the process of Encapsulating data and corresponding methods into a single module.
+- Encapsulation is a process of wrapping of data and methods in a single unit is called encapsulation.
+- Encapsulation is achieved in java language by class concept.
 - If any java class follows data hiding and abstraction such type of class is said to be encapsulated class.   
          ```Encapsulation=Datahiding+Abstraction ```
 
