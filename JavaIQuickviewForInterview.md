@@ -20,9 +20,9 @@ Collection of objects is called class. It is a logical entity.
  - Encapsulation is more about ‘How‘to achieve that functionality.
 
 ### Encapsulation: (singalton dp)
-It is the process of Encapsulating data and corresponding methods into a single module. Encapsulation is a process of wrapping of data and methods in a single unit is called encapsulation. Encapsulation is achieved in java language by class concept.
+- It is the process of Encapsulating data and corresponding methods into a single module. Encapsulation is a process of wrapping of data and methods in a single unit is called encapsulation. Encapsulation is achieved in java language by class concept.
 - If any java class follows data hiding and abstraction such type of class is said to be encapsulated class.   
-         ```Encapsulation=Datahiding+Abstraction ```
+               ```  Encapsulation=Datahiding+Abstraction ```
 
 ###### What is the difference b/w abstraction and encapsulation while they both are hiding the implementation from user.
 “Abstraction is implemented using interface and abstract class while Encapsulation is implemented using private and protected access modifier.”
@@ -36,7 +36,7 @@ To achieve encapsulation in Java: Declare the variables of a class as private.
 Provide public setter and getter methods to modify and view the variables values. The Java Bean class is the example of fully encapsulated class.
 
 ### Polymorphism: (Adapter Dp):
-Same name with different forms is the concept of polymorphism.Polymorphism is the ability of an object to take on many forms.The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
+- Same name with different forms is the concept of polymorphism.Polymorphism is the ability of an object to take on many forms.The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
 
 ###### Example 1:
 We can use same abs() method for int type, long type, float type etc.
@@ -49,7 +49,6 @@ We can use the same List reference to hold ArrayList object, LinkedList object, 
 
 The best exp  of polymorphism is, in our project we have implemented, build the response.If it is success we are calling one method buildResponse(obj.). If it is failure we will call same buildResponse(String respCode, String respMsg). But method parameter must be different.
 
- 
 1)	Inheritance talks about reusability.
 2)  Polymorphism talks about flexibility.
 3)	Encapsulation talks about security.
@@ -57,7 +56,7 @@ The best exp  of polymorphism is, in our project we have implemented, build the 
 1) Also known as inheritance.
 2) By using extends keywords we can implement IS-A relationship.
 3) The main advantage of IS-A relationship is reusability.
-=>To reduce the complexity and simplify the language, multiple inheritance is not supported in java.Consider a scenario where A, B and C are three classes. The C class inherits A and B classes. If A and B classes have same method and you call it from child class object, there will be ambiguity to call method of A or B class.
+- To reduce the complexity and simplify the language, multiple inheritance is not supported in java.Consider a scenario where A, B and C are three classes. The C class inherits A and B classes. If A and B classes have same method and you call it from child class object, there will be ambiguity to call method of A or B class.
 Since compile time errors are better than runtime errors, java renders compile time error if you inherit 2 classes. So whether you have same method or different, there will be compile time error now.
 ```
  class Employee{  
@@ -99,12 +98,12 @@ class Car{
 Method signature: In java method signature consists of name of the method followed by argument types.In java return type is not part of the method signature.
 
 ### Overloading:
-•	Two methods are said to be overload if and only if both having the same name but different argument types.
-•	But in java we can take multiple methods with the same name and difft argument types.
-•	Having the same name and different argument types is called method overloading.
-•	All these methods are considered as overloaded methods.
-•	Having overloading concept in java reduces complexity of the programming.
-•	Method overloading is performed within class.
+- Two methods are said to be overload if and only if both having the same name but different argument types.
+- But in java we can take multiple methods with the same name and difft argument types.
+- Having the same name and different argument types is called method overloading.
+- 	All these methods are considered as overloaded methods.
+- 	Having overloading concept in java reduces complexity of the programming.
+-	Method overloading is performed within class.
 ###### Three(3) ways to overload a method:
 In order to overload a method, the argument lists of the methods must differ in either of these
 
@@ -160,30 +159,30 @@ float → double
 long → float → double
 ```
 ### Overriding:
-•	Whatever the Parent has by default available to the Child through inheritance, if the Child is   not satisfied with Parent class method impln then Child is allow to redefine that Parent class method in Child class in its own way this process is called overriding. OR
-•	If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
-•	In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is known as method overriding.
-•	The Parent class method which is overridden is called overridden method.
-•	The Child class method which is overriding is called overriding method.
+-	Whatever the Parent has by default available to the Child through inheritance, if the Child is   not satisfied with Parent class method impln then Child is allow to redefine that Parent class method in Child class in its own way this process is called overriding. OR
+-	If subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.
+-	In other words, If a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is known as method overriding.
+-	The Parent class method which is overridden is called overridden method.
+-	The Child class method which is overriding is called overriding method.
 ###### Note: In overriding runtime object will play the role and reference type is dummy.
 ### Rules for overriding:
-•	In overriding method names and arguments must be same. That is method signature must be same.
-•	Until 1.4 version the return types must be same but from 1.5 version onwards co-variant return types are allowed.
-•	According to this Child class method return type need not be same as Parent class method return type its Child types also allowed.
-•	Method overriding occurs in two classes that have IS-A (inheritance) relationship.
-•	Method overriding is used to provide the specific implementation of the method that is already provided by its super class.
-•	It is valid in “1.5” but invalid in “1.4”.
-•	Co-variant return type concept is applicable only for object types but not for primitives.
-•	Private methods are not visible in the Child classes hence overriding concept is not applicable for private methods. Based on own requirement we can declare the same Parent class private method in child class also. It is valid but not overriding.
+-	In overriding method names and arguments must be same. That is method signature must be same.
+-	Until 1.4 version the return types must be same but from 1.5 version onwards co-variant return types are allowed.
+-	According to this Child class method return type need not be same as Parent class method return type its Child types also allowed.
+-	Method overriding occurs in two classes that have IS-A (inheritance) relationship.
+-	Method overriding is used to provide the specific implementation of the method that is already provided by its super class.
+-	It is valid in “1.5” but invalid in “1.4”.
+-	Co-variant return type concept is applicable only for object types but not for primitives.
+-	Private methods are not visible in the Child classes hence overriding concept is not applicable for private methods. Based on own requirement we can declare the same Parent class private method in child class also. It is valid but not overriding.
 ###### Example:
-•	Parent class non final methods we can override as final in child class. We can override native methods in the child classes.
-•	We should override Parent class abstract methods in Child classes to provide impl.
+-	Parent class non final methods we can override as final in child class. We can override native methods in the child classes.
+-	We should override Parent class abstract methods in Child classes to provide impl.
 It is valid. It seems to be overriding concept is applicable for static methods but it is not overriding it is met1hod hiding.
  
-###### No, Static methods can't be overriden as it is part of a class rather than an object. But one can overload static method. No, you cannot override a static method. The static resolves against the class, not the instance.
+- ###### No, Static methods can't be overriden as it is part of a class rather than an object. But one can overload static method. No, you cannot override a static method. The static resolves against the class, not the instance.
 
-•	In overriding method resolution is always takes care by JVM based on runtime object hence overriding is also considered as runtime polymorphism or dynamic polymorphism or late binding.
-•	The process of overriding method resolution is also known as dynamic method dispatch. 
+-	In overriding method resolution is always takes care by JVM based on runtime object hence overriding is also considered as runtime polymorphism or dynamic polymorphism or late binding.
+-	The process of overriding method resolution is also known as dynamic method dispatch. 
 
 1. Overriding refers to the ability of a subclass to re-implement an instance method inherited from a superclass. 
 2.    What methods can be overridden ? Rule #1: Only inherited methods can be overridden.
@@ -200,10 +199,10 @@ In other words, the overriding(child class) method may have less restrictive (mo
 ###### 	If the overridden method is public, then the overriding one must be only public.
 
 ####  Access modifier restrictions in decreasing order:
-•	private
-•	default
-•	protected
-•	public
+-	private
+-	default
+-	protected
+-	public
 
 https://www.codejava.net/java-core/the-java-language/12-rules-of-overriding-in-java-you-should-know
 
@@ -257,10 +256,10 @@ That means the presence or absence of the strictfp modifier has absolutely no ef
 In overloading we have to check only method names (must be same) and arguments (must be different) the remaining things like return type extra not required to check.
 But In overriding we should compulsory check everything like method names, arguments, return types, throws keyword, modifiers
 ### Constructors
-•	Object creation is not enough compulsory we should perform initialization then only the object is in a position to provide the response properly.
-•	Whenever we are creating an object some piece of the code will be executed automatically to perform initialization of an object this piece of the code is nothing but constructor.Hence the main objective of constructor is to perform initialization of an object.
-### Constructor Vs instance block:
-•	Both instance block and constructor will be executed automatically for every object creation but instance block 1st followed by constructor.
+-	Object creation is not enough compulsory we should perform initialization then only the object is in a position to provide the response properly.
+-	Whenever we are creating an object some piece of the code will be executed automatically to perform initialization of an object this piece of the code is nothing but constructor.Hence the main objective of constructor is to perform initialization of an object.
+ ### Constructor Vs instance block:
+-	Both instance block and constructor will be executed automatically for every object creation but instance block 1st followed by constructor.
 •	The main objective of constructor is to perform initialization of an object.
 •	Other than initialization if we want to perform any activity for every object creation we have to define that activity inside instance block.
 •	Both concepts having different purposes hence replacing one concept with another concept is not possible.
@@ -351,29 +350,29 @@ Output:parent class constructor invoked
 ###### Note: first run static block-main method-static method
 
 #### Rules of static block in Java
-•	Static block always get executed before static method.
-•	Static block cannot return a value.
-•	Static block cannot be called explicitly.
-•	Static block cannot throws an exception.
-•	The this and super keywords cannot be used inside the static block.
-•	If a class have multiple blocks then they will execute in the same order as they written.
+-	Static block always get executed before static method.
+-	Static block cannot return a value.
+-	Static block cannot be called explicitly.
+-	Static block cannot throws an exception.
+-	The this and super keywords cannot be used inside the static block.
+-	If a class have multiple blocks then they will execute in the same order as they written.
 #### When a static initializer block can be used
-•	If you’re loading drivers. For ex, Class class has a static block where it registers the natives.
-•	If you need to do manipulation in order to initialize your static variables, you can declare a static block which gets executed exactly once, when the class is first loaded.
-•	If you need a Map with static values.
-•	If you need some common values like server url, IP address at very beginning of the prg.
-•	Security related issues or logging related tasks.
+-	If you’re loading drivers. For ex, Class class has a static block where it registers the natives.
+-	If you need to do manipulation in order to initialize your static variables, you can declare a static block which gets executed exactly once, when the class is first loaded.
+-	If you need a Map with static values.
+-	If you need some common values like server url, IP address at very beginning of the prg.
+-	Security related issues or logging related tasks.
 ### Static keyword : 
 SK in java is used for memory management mainly. We can apply java static keyword with variables (also known as class variable), methods (also known as class method), blocks and nested class. The static keyword belongs to the class than instance of the class.
-•	The static variable can be used to refer the common property of all objects (that is not unique for each object) e.g. company name of employees,college name of students etc.
-•	The static variable gets memory only once in class area at the time of class loading.
-•	
-•	A static method belongs to the class rather than object of a class.
-•	A static method can be invoked without the need for creating an instance of a class.
-•	static method can access static data member and can change the value of it.
-•	
-•	Static block used to initialize the static data member.
-•	It is executed before main method at the time of classloading.
+-	The static variable can be used to refer the common property of all objects (that is not unique for each object) e.g. company name of employees,college name of students etc.
+-	The static variable gets memory only once in class area at the time of class loading.
+	
+-	A static method belongs to the class rather than object of a class.
+-	A static method can be invoked without the need for creating an instance of a class.
+-	static method can access static data member and can change the value of it.
+	
+-	Static block used to initialize the static data member.
+-	It is executed before main method at the time of classloading.
 
 |INSTANCE/NON-STATIC VARIABLES|	STATIC VARIABLES|
 | ------------- | ------------------------------ |
@@ -399,7 +398,7 @@ The 1st line inside every constructor should be either super() or this() if we a
 2.	Super () is used to invoke immediate parent class constructor.
 3.	super is used to invoke immediate parent class method.
 We can’t create object for abstract class but abstract class can contain constructor what is the need?
-•	Abstract class constructor will be executed to perform initialization of child class object.
+-	Abstract class constructor will be executed to perform initialization of child class object.
 
 ### Java Object Class Method.
 clone() - Creates and returns a copy of this object.
@@ -436,12 +435,12 @@ An interface is a collection of abstract methods. A class implements an interfac
 interfaces can have abstract methods and variables. It cannot have a method body.
 
 An interface can contain set of abstract methods. In an interface we cannot provide method with body. By default all the methods in an interface are “Abstract”.As part of an interface we can declare the variable ,  when we declare variables in the interface, by default they are “static and final” variables
-o	Java 8, we can have default and static methods in an interface. Java 9, we can have private methods in an interface.
-o	 It is used to achieve abstraction.I support the functionality of multiple inheritance.
-o	It can be used to achieve loose coupling.
+-	Java 8, we can have default and static methods in an interface. Java 9, we can have private methods in an interface.
+-	 It is used to achieve abstraction.I support the functionality of multiple inheritance.
+-	It can be used to achieve loose coupling.
 ###### Qu. When we should go for interface, abstract class and concrete class?
-•	When use=== >If you think you will need to add methods in the future, then an abstract class is a better choice. Because if you add new method headings to an interface, then all of the classes that already implement that interface will have to be changed to implement the new methods. That can be quite a hassle.
-•	Interfaces are a good choice when you think that the API will not change for a while.
+-	When use=== >If you think you will need to add methods in the future, then an abstract class is a better choice. Because if you add new method headings to an interface, then all of the classes that already implement that interface will have to be changed to implement the new methods. That can be quite a hassle.
+-	Interfaces are a good choice when you think that the API will not change for a while.
 ### Difference between interface and abstract class :
 |Interface|	Abstract class|
 | ------------- | ------------- |
