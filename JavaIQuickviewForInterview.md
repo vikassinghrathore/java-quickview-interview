@@ -49,21 +49,23 @@ We can use the same List reference to hold ArrayList object, LinkedList object, 
 
 The best exp  of polymorphism is, in our project we have implemented, build the response.If it is success we are calling one method buildResponse(obj.). If it is failure we will call same buildResponse(String respCode, String respMsg). But method parameter must be different.
 
-1)	Inheritance talks about reusability.
+1)  Inheritance talks about reusability.
 2)  Polymorphism talks about flexibility.
-3)	Encapsulation talks about security.
+3)  Encapsulation talks about security.
+
 ### IS-A Relationship(inheritance):
 1) Also known as inheritance.
 2) By using extends keywords we can implement IS-A relationship.
 3) The main advantage of IS-A relationship is reusability.
-- To reduce the complexity and simplify the language, multiple inheritance is not supported in java.Consider a scenario where A, B and C are three classes. The C class inherits A and B classes. If A and B classes have same method and you call it from child class object, there will be ambiguity to call method of A or B class.
-Since compile time errors are better than runtime errors, java renders compile time error if you inherit 2 classes. So whether you have same method or different, there will be compile time error now.
+- To reduce the complexity and simplify the language, multiple inheritance is not supported in java.
+- Consider a scenario where A, B and C are three classes. The C class inherits A and B classes. If A and B classes have same method and you call it from child class object, there will be ambiguity to call method of A or B class.
+- Since compile time errors are better than runtime errors, java renders compile time error if you inherit 2 classes. So whether you have same method or different, there will be compile time error now.
 ```
- class Employee{  
- float salary=40000;  }  
-class Programmer extends Employee{  
- int bonus=10000;  
- public static void main(String args[]){  
+   class Employee{  
+   float salary=40000;  }  
+   class Programmer extends Employee{  
+   int bonus=10000;  
+   public static void main(String args[]){  
    Programmer p=new Programmer();  
    System.out.println("Programmer salary is:"+p.salary);  
    System.out.println("Bonus of Programmer is:"+p.bonus);  
