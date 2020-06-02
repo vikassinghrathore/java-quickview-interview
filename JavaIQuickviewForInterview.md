@@ -79,7 +79,7 @@ Example:
      class Engine {
 	//engine specific functionality
 }
-class Car{
+    class Car{
 	Engine e=new Engine();
 	//........................;
 }
@@ -185,14 +185,17 @@ It is valid. It seems to be overriding concept is applicable for static methods 
 -	The process of overriding method resolution is also known as dynamic method dispatch. 
 
 1. Overriding refers to the ability of a subclass to re-implement an instance method inherited from a superclass. 
-2.    What methods can be overridden ? Rule #1: Only inherited methods can be overridden.
-3.   What methods that cannot be overridden?Rule #2: Final and static methods cannot be overridden.
-4.    Requirements for the overriding method
+2.    What methods can be overridden ? 
+######     Rule #1: Only inherited methods can be overridden.
+3.   What methods that cannot be overridden?
+######  Rule #2: Final and static methods cannot be overridden.
+4.   Requirements for the overriding method
 With respect to the overridden method, the overriding method must obey the following rules:
-Rule #3: The overriding method must have same argument list.
-Rule #4: The overriding method must have same return type (or subtype).
+
+######     Rule #3: The overriding method must have same argument list.
+######     Rule #4: The overriding method must have same return type (or subtype).
 Suppose that a Food class has a subclass called DogFood, the following example shows a correct overriding:
-Rule #5: The overriding method must not have more restrictive access modifier.
+######     Rule #5: The overriding method must not have more restrictive access modifier.
 In other words, the overriding(child class) method may have less restrictive (more relaxed) access modifier. The following example shows a legal overriding:
 ###### 	If the overridden method is has default access, then the overriding one must be default, protected or public.
 ###### 	If the overridden method is protected, then the overriding one must be protected or public.
@@ -206,21 +209,22 @@ In other words, the overriding(child class) method may have less restrictive (mo
 
 https://www.codejava.net/java-core/the-java-language/12-rules-of-overriding-in-java-you-should-know
 
-Rule #6: The overriding method must not throw new or broader checked exceptions.
+######     Rule #6: The overriding method must not throw new or broader checked exceptions.
 In other words, the overriding method may throw fewer or narrower checked exceptions, or any unchecked exceptions. 
-5.    Invoking the overridden method
-Rule #7: Use the super keyword to invoke the overridden method from a subclass.
+5. Invoking the overridden method
+###### Rule #7: Use the super keyword to invoke the overridden method from a subclass.
 6.    Overriding and constructor
-Rule #8: Constructors cannot be overridden.
+######     Rule #8: Constructors cannot be overridden.
 7.    Overriding and abstract method
-Rule #9: Abstract methods must be overridden by the first concrete (non-abstract) subclass.
+######     Rule #9: Abstract methods must be overridden by the first concrete (non-abstract) subclass.
 8.    Overriding and static method
-Rule #10: A static method in a subclass may hide another static one in a superclass, and that’s called hiding.
+######     Rule #10: A static method in a subclass may hide another static one in a superclass, and that’s called hiding.
 9.    Overriding and synchronized method
-Rule #11: The synchronized modifier has no effect on the rules of overriding.
+######     Rule #11: The synchronized modifier has no effect on the rules of overriding.
 10.    Overriding and strictfp method
-Rule #12: The strictfp modifier has no effect on the rules of overriding.
+######     Rule #12: The strictfp modifier has no effect on the rules of overriding.
 That means the presence or absence of the strictfp modifier has absolutely no effect on the rules of overriding: it’s possible that a FP-strict method can override a non-FP-strict one and vice-versa.
+
 ### METHOD HIDING
 - All rules of method hiding are exactly same as overriding except the following differences.
 
@@ -258,21 +262,22 @@ But In overriding we should compulsory check everything like method names, argum
 ### Constructors
 -	Object creation is not enough compulsory we should perform initialization then only the object is in a position to provide the response properly.
 -	Whenever we are creating an object some piece of the code will be executed automatically to perform initialization of an object this piece of the code is nothing but constructor.Hence the main objective of constructor is to perform initialization of an object.
- ### Constructor Vs instance block:
+#### Constructor Vs instance block:
 -	Both instance block and constructor will be executed automatically for every object creation but instance block 1st followed by constructor.
-•	The main objective of constructor is to perform initialization of an object.
-•	Other than initialization if we want to perform any activity for every object creation we have to define that activity inside instance block.
-•	Both concepts having different purposes hence replacing one concept with another concept is not possible.
-•	Constructor can take arguments but instance block can’t take any arguments hence we can’t replace constructor concept with instance block.
-•	Similarly we can’t replace instance block purpose with constructor.
+-	The main objective of constructor is to perform initialization of an object.
+-	Other than initialization if we want to perform any activity for every object creation we have to define that activity inside instance block.
+-	Both concepts having different purposes hence replacing one concept with another concept is not possible.
+-	Constructor can take arguments but instance block can’t take any arguments hence we can’t replace constructor concept with instance block.
+-	Similarly we can’t replace instance block purpose with constructor.
 
-Static blocks will be executed at the time of class loading hence if we want to perform any activity at the time of class loading we have to define that activity inside static block.
+###### Static blocks will be executed at the time of class loading hence if we want to perform any activity at the time of class loading we have to define that activity inside static block.
 
-•  With  in  a  class  we  can  take  any  no.  Of  static  blocks  and  all  these  static  blocks  will  be executed from top to bottom.
+-  With  in  a  class  we  can  take  any  no.  Of  static  blocks  and  all  these  static  blocks  will  be executed from top to bottom.
 Static Control Flow is one time activity and it will be executed at the time of class loading. But  instance  control  flow  is  not  one  time  activity  for  every  object  creation  it  will  be executed.
-Instance Initializer block is used to initialize the instance data member. It run each time when object of the class is created.
+- Instance Initializer block is used to initialize the instance data member. It run each time when object of the class is created.
 The initialization of the instance variable can be done directly but there can be performed extra operations while initializing the instance variable in the instance initializer block
 ###### What is invoked first, instance initializer block or constructor?
+
 ```
 	class Bike8{  
 	    int speed;  	      
@@ -281,66 +286,62 @@ The initialization of the instance variable can be done directly but there can b
 	    public static void main(String args[]){  
 	    Bike8 b1=new Bike8();  
 	    Bike8 b2=new Bike8();  
-	    }      	}  
-Output:instance initializer block invoked
+	    } 
+}  
+       Output:instance initializer block invoked
        constructor is invoked
        instance initializer block invoked
        constructor is invoked
 In the above exp, it seems that instance initializer block is firstly invoked but NO. Instance intializer block is invoked at the time of object creation. The java compiler copies the instance initializer block in the constructor after the first statement super(). So firstly, constructor is invoked. Let's understand it by the figure given below:
-Note: The java compiler copies the code of instance initializer block in every constructor.
+
+Note:The java compiler copies the code of instance initializer block in every constructor.
 
 Rules for instance initializer block :3 rules for the instance initializer block. 
 1.	The instance initializer block is created when instance of the class is created.
-2.	The instance initializer block is invoked after the parent class constructor is      invoked (i.e. after super() constructor call).
+2.	The instance initializer block is invoked after the parent class constructor is invoked (i.e. after super() constructor call).
 3.	The instance initializer block comes in the order in which they appear.
 Program of instance initializer block that is invoked after super()
-1.	class A{  
-2.	A(){  
-3.	System.out.println("parent class constructor invoked");  
-4.	}  
-5.	}  
-6.	class B2 extends A{  
-7.	B2(){  
-8.	super();  
-9.	System.out.println("child class constructor invoked");  
-10.	}  
-11.	  
-12.	{System.out.println("instance initializer block is invoked");}  
-13.	  
-14.	public static void main(String args[]){  
-15.	B2 b=new B2();  
-16.	}  
-17.	}  
-Output:parent class constructor invoked
+	class A{  
+    A(){  
+	System.out.println("parent class constructor invoked");  
+	}  
+	}  
+	class B2 extends A{  
+	B2(){  
+	super();  
+	System.out.println("child class constructor invoked");  
+	}  
+	{System.out.println("instance initializer block is invoked");}  
+	public static void main(String args[]){  
+	B2 b=new B2();  
+	}  
+	}  
+       Output:parent class constructor invoked
        instance initializer block is invoked
        child class constructor invoked
 ________________________________________
 Another example of instance block
-1.	class A{  
-2.	A(){  
-3.	System.out.println("parent class constructor invoked");  
-4.	}  
-5.	}  
-6.	  
-7.	class B3 extends A{  
-8.	B3(){  
-9.	super();  
-10.	System.out.println("child class constructor invoked");  
-11.	}  
-12.	  
-13.	B3(int a){  
-14.	super();  
-15.	System.out.println("child class constructor invoked "+a);  
-16.	}  
-17.	  
-18.	{System.out.println("instance initializer block is invoked");}  
-19.	  
-20.	public static void main(String args[]){  
-21.	B3 b1=new B3();  
-22.	B3 b2=new B3(10);  
-23.	}  
-24.	}  
-Output:parent class constructor invoked
+	class A{  
+	A(){  
+	System.out.println("parent class constructor invoked");  
+	}  
+	}  
+	class B3 extends A{  
+	B3(){  
+	super();  
+	System.out.println("child class constructor invoked");  
+	}  
+	B3(int a){  
+	super();  
+	System.out.println("child class constructor invoked "+a);  
+	}  
+	{System.out.println("instance initializer block is invoked");}  
+	public static void main(String args[]){  
+	B3 b1=new B3();  
+	B3 b2=new B3(10);  
+	}  
+	}  
+       Output:parent class constructor invoked
        instance initializer block is invoked
        child class constructor invoked
        parent class constructor invoked
@@ -400,22 +401,25 @@ The 1st line inside every constructor should be either super() or this() if we a
 We can’t create object for abstract class but abstract class can contain constructor what is the need?
 -	Abstract class constructor will be executed to perform initialization of child class object.
 
-### Java Object Class Method.
-clone() - Creates and returns a copy of this object.
-equals() - Indicates whether some other object is "equal to" this one. 
-finalize() - Called by the garbage collector on an object when garbage collection determines that there are no more references to the object. 
-getClass() - Returns the runtime class of an object. 
-hashCode() - Returns a hash code value for the object.
- notify() - Wakes up a single thread that is waiting on this object's monitor.
- notifyAll() - Wakes up all threads that are waiting on this object's monitor. 
-toString() - Returns a string representation of the object.
- wait() - Causes current thread to wait until another thread invokes the notify() method or the notifyAll() method for this object. 
+### Java Object Class Method
+
+|clone() | Creates and returns a copy of this object.|
+|------------|-----------------|
+|equals() |Indicates whether some other object is "equal to" this one. 
+|finalize()| Called by the garbage collector on an object when garbage collection determines that there are no more references to the object. |
+|getClass() |Returns the runtime class of an object. |
+|hashCode() | Returns a hash code value for the object.|
+|notify() | Wakes up a single thread that is waiting on this object's monitor.|
+|notifyAll() | Wakes up all threads that are waiting on this object's monitor. |
+|toString() | Returns a string representation of the object.|
+|wait() |Causes current thread to wait until another thread invokes the notify() method or the notifyAll() method for this object.|
+
 ### Abstract Method 
 A method that is declared as abstract and does not have implementation is known as abstract method.Ex. abstract void printStatus();//no body and abstract  
 
 ### Abstract Class
 Abstract classes are classes that contain one or more abstract methods. An abstract method is a method that is declared, but contains no implementation.
-USE: An abstract class can be used as a type of template for other classes. The abstract class will hold common functionality for all classes that extend it.
+###### USE: An abstract class can be used as a type of template for other classes. The abstract class will hold common functionality for all classes that extend it.
 ### Abstract Class
 1.	Abstract classes may or may not contain abstract methods, i.e., methods without body ( public void get(); )
 2.	But, if a class has at least one abstract method, then the class must be declared abstract.
