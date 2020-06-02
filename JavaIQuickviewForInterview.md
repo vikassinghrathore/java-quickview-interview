@@ -469,3 +469,117 @@ An interface can contain set of abstract methods. In an interface we cannot prov
 ######  L: Liskov substitution principle: “Derived types must be completely substitutable for their base types”--properityEditor in spring
 ######  I: Interface segregation principle: “Clients should not be forced to implement unnecessary methods which they will not use” listner awt
 ######  D: Dependency inversion principle:“Depend on abstractions, not on concretions” bean cfg spring
+
+### Exception Handling
+#### Exception:
+An unwanted unexpected event that disturbs normal flow of the program is called exception. Most of the cases exceptions are caused by our prg and these are recoverable. 
+#### Exception Handling:
+Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+#### Advantage of Exception Handlings:
+The core advantage of EH is to maintain the normal flow of the app. An exception normally disrupts the normal flow of the application that is why we use EH. Let's take a scenario:
+1.	statement 1;  
+2.	statement 2;  
+3.	statement 3;  
+4.	statement 4;  
+5.	statement 5;//exception occurs  
+6.	statement 6;  
+7.	statement 7;  
+8.	statement 8;  
+9.	statement 9;  
+10.	statement 10;  
+
+Suppose there are 10 statements in your program and there occurs an exception at statement 5, the rest of the code will not be executed i.e. statement 6 to 10 will not be executed. If we perform exception handling, the rest of the statement will be executed. That is why we use exception handling in Java.
+
+#### Error:
+Most of the cases errors are not caused by our program these are due to lack of system resources and these are non recoverable.
+#### Checked Exception:
+- The exceptions which are checked by the compiler for smooth execution of the program 
+- (Checked Exceptions occur at the compile time of the program.These exceptions should be either caught or handled during compile time.If we do not catch or handle them then the compiler will throw a compilation error.These are the sub classes of the Exception class.)
+##### Ex
+IOException, DataAccessException, ClassNotFoundException, InvocationTargetException
+#### FileNotFoundException
+ClassNotFoundException is thrown when the Java Virtual Machine (JVM) tries to load a particular class and the specified class cannot be found in the classpath. 
+#### NoClassDefFoundError
+NoClassDefFoundError is an error which is thrown when Java Runtime System tries to      load the definition of a class and class definition is no longer available. The required class definition was present at compile time but it was missing at run time. For example, compile the below program.
+#### Unchecked Exception
+The exceptions which are not checked by the compiler are called unchecked exceptions.
+Checked Exceptions occur at the runtime of the program.These are also known as Runtime Exceptions.It is not a reqirement to handle or catch them at compile time.These are mainly due to the mistakes in the program.
+#### Ex
+NPE,ArrayIndexOutOfBoundsException,ArithmeticException,IllegalArgumentException
+###### Note:  RuntimeException and its child classes, Error and its child classes are unchecked and all the remaining are considered as checked exceptions.
+
+The only partially checked exceptions available in java are: 
+1. Throwable.
+2. Exception.
+ 
+
+### Difference between final, finally, and finalize:
+#### Final:
+-	Final is the modifier applicable for class, methods and variables.
+-	If a class declared as the final then child class creation is not possible.
+-	If a method declared as the final then overriding of that method is not possible.
+-	If a variable declared as the final then reassignment is not possible.
+#### Finally Block:
+-	It is the block always associated with try catch to maintain clean up code which should be executed always irrespective of whether exception raised or not raised and  whether handled or not handled.
+#### Finalize() Mehod:
+-	It is a method which should be called by garbage collector always just before destroying an object to perform cleanup activities. finalize() method overrides to dispose system resources, perform clean-up activities and minimize memory leaks.System.gc(); and override finalize();
+###### Note:To maintain clean up code finally block is recommended over finalize() method because we can’t expert exact behavior of GC.
+
+Throw :Throw Sometime we can create exception object explicitly and we can hand over to the JVM manually by using throw keyword.
+Throws :Throws in our program if there is any chance of raising checked exception compulsory we should handle either by try catch or by throws keyword otherwise the code won’t compile.
+### Throw vs Throws Keword in java
+1. Throw keyword is used to throw an exception explicitly and Throws in used to declare an exp  and throws called when checked exception and delegate respontbilities to caller method.
+2.  Throw is followed by an instance variable and Throws is followed by exception class names.
+3.  Throw is used inside method body to invoke an exception and Throws is used in method declaration (signature).
+4. By using Throw in java you cannot throw more than one exception but using Throws you can declare multiple exceptions.
+5. checked exceptions can not be propagated with throw only. checked exception can be propagated with throws. Forwarding the exception object to the invoking method is known as exception propagation.
+Checked Exception is a direct subclass of Exception where as unchecked exception is a subclass of RunTimeException.
+Checked exception should be wrapped in a try-catch block or specified as throws clause where as there is no such requirement for unchecked exception
+### Exception handling keywords summary:
+1)	try: To maintain risky code.
+2)	catch: To maintain handling code.
+3)	finally: To maintain cleanup code.
+4)	throw: To handover our created exception object to the JVM manually.
+5)	throws: To delegate responsibility of exception handling to the caller method.
+### Customized Exceptions (User defined Exceptions): 
+Sometimes we can create our own exception to meet our programming requirements. Such types of exceptions called custom exception.
+Note: highly recommended to maintain our customized exceptions as unchecked by extending RuntimeException.We can catch any Throwable type including Errors also.
+### Java Custom Exception/Userdefined EX
+If you are creating your own Exception that is known as custom exception or user-defined exception. Java custom exceptions are used to customize the exception according to user need.By the help of custom exception; you can have your own exception and message.
+```
+class InvalidAgeException extends Exception{  
+ InvalidAgeException(String s){  
+  super(s);  
+    }  }  
+class TestCustomException{  
+static void validate(int age)throws InvalidAgeException{  
+     if (age<18)  
+      throw new InvalidAgeException("not valid");  
+     else  
+      System.out.println("welcome to vote");  
+   }  
+    public static void main(String args[]){  
+      try{  
+      validate(13);  
+      } catch(Exception m){System.out.println("Exception occured: "+m);}  
+       System.out.println("rest of the code...");  
+      }  }  
+Output:Exception occured: InvalidAgeException:not valid
+       rest of the code.....
+```
+
+### Try-with-resource - How resources are closed automatically
+-	Any resource that is used with try-with-resource is closed automatically because of the interface java.lang.AutoCloseable. AutoCloseable interface in Java has a close method and any resource used with try-with-resources should implement this interface and provide implementation for the close method.
+-	It should be noted that the close method of AutoCloseable interface throws exceptions of type Exception. Consequently, subclasses of the AutoCloseable interface can override this behavior of the close method to throw specialized exceptions. Like in Java 7 Closeable interface extends AutoCloseable and override the behavior of close method to throw IOException.
+In the above example BufferedReader class is used which implements the close method of Closeable interface and throw IOException.
+### ExceptionHandling with MethodOverriding
+Many rules if we talk about methodoverriding with exception handling. The Rules are 
+###### If the superclass method does not declare an exception
+If the superclass method does not declare an exception, subclass overridden method cannot declare the checked exception but it can declare unchecked exception.
+###### If the superclass method declares an exception
+- If the superclass method declares an exception, subclass overridden method can declare same, subclass exception or no exception but cannot declare parent exception.
+-  If base class doesn’t throw any exception but child class throws an unchecked exception.
+-  If base class doesn’t throw any exception but child class throws an checked exception.Unresolved compilation problems.
+-  When base class and child class both throws a checked Exception
+-  When child class method is throwing border checked exception compared to the same method of base class: Compilation error
+
